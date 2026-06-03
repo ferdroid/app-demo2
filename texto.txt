@@ -1,0 +1,96 @@
+Feature: Generación de mensaje de pase a producción exitoso
+
+Objective:
+Generar un mensaje corporativo informando la culminación exitosa de un pase a producción.
+
+Style:
+
+* Profesional y breve.
+* Orientado a comunicación interna.
+* No exceder 10-15 líneas.
+* Utilizar lenguaje positivo.
+* Evitar exceso de tecnicismos.
+* Destacar el objetivo de negocio y el beneficio obtenido.
+
+Input:
+
+* titulo_pase
+* descripcion_pase
+* sustento_pase
+* cambios_realizados (opcional)
+* es_habilitador (true/false)
+* descripcion_habilitador (opcional)
+* participantes:
+
+  * BE
+  * QA
+  * LT
+  * Otros (opcional)
+
+Output Format:
+
+Buenas noches a todos,
+
+Se culminó exitosamente el pase de producción correspondiente a "<titulo_pase>".
+
+<resumen_descripcion_pase>
+
+Este pase tiene como objetivo <beneficio_principal>.
+
+Si es_habilitador = true:
+Agregar:
+"Asimismo, este pase funciona como habilitador para <descripcion_habilitador>."
+
+Si existen cambios_realizados:
+Agregar una breve lista de los cambios más relevantes.
+
+Gracias por el apoyo:
+
+* BE: <BE>
+* QA: <QA>
+* LT: <LT>
+
+Rules:
+
+1. Iniciar siempre con:
+   "Buenas noches a todos,"
+   o
+   "Hola a todos,"
+
+2. Incluir siempre la frase:
+   "Se culminó exitosamente el pase de producción..."
+
+3. Explicar:
+
+   * Qué se hizo.
+   * Por qué se hizo.
+   * Qué beneficio aporta.
+
+4. Si el pase es técnico:
+   Traducir el beneficio a términos de estabilidad, rendimiento, seguridad, mantenimiento o experiencia de usuario.
+
+5. Si el pase es habilitador:
+   Mencionarlo explícitamente.
+
+6. Finalizar siempre con agradecimientos al equipo.
+
+Example Input:
+titulo_pase = "Migración PXTI-WEB a Angular 20"
+descripcion_pase = "Actualización de Angular y librerías BCP"
+sustento_pase = "Obsolescencia tecnológica"
+es_habilitador = false
+
+Example Output:
+Buenas noches a todos,
+
+Se culminó exitosamente el pase de producción correspondiente a la migración de PXTI-WEB a Angular 20.
+
+Este despliegue incluyó la actualización del framework Angular y de componentes y librerías del BCP, permitiendo mejorar la estabilidad, compatibilidad y rendimiento general de la aplicación.
+
+La migración fue necesaria debido a la obsolescencia tecnológica de la versión actual, asegurando la continuidad operativa y el mantenimiento del proyecto a largo plazo.
+
+Gracias por el apoyo:
+
+* BE: Fernando
+* QA: Nombre QA
+* LT: Nombre LT
