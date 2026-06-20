@@ -50,3 +50,5 @@ tmp/
 
 # Auto-generated files
 .angular/cache/
+
+.postcssrc.json

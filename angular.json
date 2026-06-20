@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
+  "cli": {
+    "packageManager": "npm"
+  },
   "newProjectRoot": "projects",
   "projects": {
-    "pxti": {
+    "pxti-web-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -12,12 +15,13 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "pxti",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -26,7 +30,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": ["src/styles.scss", "src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -56,10 +60,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pxti:build:production"
+              "buildTarget": "pxti-web-app:build:production"
             },
             "development": {
-              "buildTarget": "pxti:build:development"
+              "buildTarget": "pxti-web-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -67,17 +71,21 @@
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"
         },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
+        "test": {
+          "builder": "@angular/build:unit-test",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "buildTarget": "pxti-web-app:build:development",
+            "tsConfig": "tsconfig.spec.json",
+            "runner": "vitest"
+          },
+          "configurations": {
+            "coverage": {
+              "codeCoverage": true,
+              "codeCoverageReporters": ["html", "text", "lcov", "text-summary"]
+            }
           }
         }
       }
     }
-  },
-  "cli": {
-    "schematicCollections": ["angular-eslint"],
-    "analytics": false
   }
 }

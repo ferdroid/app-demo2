@@ -4,17 +4,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
-  "eslint.validate": [
-    "typescript",
-    "typescriptreact",
-    "html",
-    "scss"
-  ],
+  "eslint.validate": ["typescript", "typescriptreact", "html", "scss"],
   "stylelint.enable": true,
-  "stylelint.validate": [
-    "css",
-    "scss"
-  ],
+  "stylelint.validate": ["css", "scss"],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -33,7 +25,22 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "tailwindCSS.includeLanguages": {
+    "typescript": "html",
+    "typescriptreact": "html"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "cSpell.words": [
+    "bradlc",
+    "dbaeumer",
+    "esbenp",
+    "postcssrc",
+    "pxti",
     "unspaced"
   ],
   "cSpell.ignorePaths": [
@@ -42,14 +49,5 @@
     "**/.angular/**",
     "**/*.config.js",
     "**/*.config.json"
-  ],
-  "tailwindCSS.includeLanguages": {
-    "html": "html",
-    "typescript": "javascript",
-    "css": "css"
-  },
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "tailwindCSS.experimental.configFile": "tailwind.config.js"
+  ]
 }

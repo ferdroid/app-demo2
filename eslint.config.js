@@ -127,6 +127,40 @@ module.exports = tseslint.config(
     },
   },
   {
+    files: ['src/app/**/*.dto.ts'],
+    rules: {
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'default',
+          format: ['camelCase'],
+          leadingUnderscore: 'allow',
+          trailingUnderscore: 'allow',
+        },
+        {
+          selector: 'variable',
+          format: ['camelCase', 'UPPER_CASE'],
+          leadingUnderscore: 'allow',
+          trailingUnderscore: 'allow',
+        },
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'enumMember',
+          format: ['UPPER_CASE'],
+        },
+        {
+          selector: 'property',
+          format: ['camelCase', 'snake_case'],
+          leadingUnderscore: 'allow',
+          trailingUnderscore: 'allow',
+        }
+      ],
+    }
+  },
+  {
     files: ['**/*.js'],
     plugins: { prettier: prettierPlugin },
     rules: {

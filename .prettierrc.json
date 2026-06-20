@@ -9,12 +9,13 @@
   "trailingComma": "all",
   "useTabs": false,
   "arrowParens": "always",
+  "plugins": ["prettier-plugin-tailwindcss"],
   "overrides": [
     {
       "files": "src/**/*.html",
       "options": {
         "parser": "angular",
-        "printWidth": 100
+        "printWidth": 120
       }
     },
     {

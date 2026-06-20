@@ -1,7 +1,7 @@
-# AppDemoV20
+# AngularV20
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version
-20.3.16.
+20.3.29.
 
 ## Development server
 
